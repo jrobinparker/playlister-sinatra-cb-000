@@ -13,7 +13,7 @@
 
   <br/>
 
-  <% @genres.each do |genre| %>
+  <% @artist.genres.each do |genre| %>
     <input type="checkbox" name="artist[genre_ids][]"  value="<%= genre.id %>" id="<%= genre.id %>"><%= genre.name %></input>
   <% end %>
   <br/>

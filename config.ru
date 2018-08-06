@@ -1,4 +1,5 @@
 require './config/environment'
+require 'sinatra/base'
 
 if ActiveRecord::Migrator.needs_migration?
   raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
@@ -10,4 +11,7 @@ require_relative 'app/controllers/genres_controller'
 require_relative 'app/controllers/application_controller'
 
 use Rack::MethodOverride
-run ApplicationController
+
+map('/artists') { run ArtistsController }
+map('/genres') { run GenresController }
+map('/songs') { run SongsController }

@@ -1,11 +1,12 @@
 class ArtistsController < ApplicationController
 
-  get '/artists' do
+  get '/' do
     @artists = Artist.all
     erb :'/artists/index'
   end
 
-  get '/artists/new' do
+  get '/new' do
+    @genres = Genre.all
     erb :'/artists/new'
   end
 
